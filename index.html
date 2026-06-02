@@ -500,23 +500,6 @@ nav { position: fixed; bottom: 0; left: 0; right: 0; z-index: 100; background: r
     <div class="scroll-content">
       <div class="section-title">THIS WEEK'S PLAN</div>
       <div id="schedule-strip" style="display:flex;gap:8px;margin-bottom:20px;overflow-x:auto;padding-bottom:4px;-webkit-overflow-scrolling:touch;"></div>
-      <div class="agent-shell card">
-        <div class="agent-shell-head">
-          <div>
-            <div class="agent-shell-title">HERMES SHELL</div>
-            <div class="agent-shell-sub">Editable workout JSON. Hermes can read this block or call <span style="font-family:'JetBrains Mono',monospace;color:var(--accent)">window.FORGE_HERMES_API</span>.</div>
-          </div>
-          <span class="badge badge-accent" id="hermes-shell-count">0 WORKOUTS</span>
-        </div>
-        <textarea id="hermes-shell-input" spellcheck="false" aria-label="Hermes editable workout JSON"></textarea>
-        <div class="shell-actions">
-          <button class="btn btn-primary" id="btn-shell-apply">APPLY</button>
-          <button class="btn btn-ghost" id="btn-shell-format">FORMAT</button>
-          <button class="btn btn-ghost" id="btn-shell-copy">COPY</button>
-          <button class="btn btn-danger" id="btn-shell-reset">RESET</button>
-        </div>
-        <div class="shell-status" id="hermes-shell-status"></div>
-      </div>
       <div class="section-title">ALL WORKOUTS</div>
       <div class="workout-list" id="workout-list"></div>
     </div>
@@ -584,6 +567,25 @@ nav { position: fixed; bottom: 0; left: 0; right: 0; z-index: 100; background: r
 
       <div class="section-title" style="margin-top:4px">ACHIEVEMENTS</div>
       <div class="achievements-grid" id="achievements-grid"></div>
+
+      <div class="section-title" style="margin-top:24px">API</div>
+      <div class="agent-shell card">
+        <div class="agent-shell-head">
+          <div>
+            <div class="agent-shell-title">HERMES SHELL</div>
+            <div class="agent-shell-sub">Editable workout JSON. Hermes can read this block or call <span style="font-family:'JetBrains Mono',monospace;color:var(--accent)">window.FORGE_HERMES_API</span>.</div>
+          </div>
+          <span class="badge badge-accent" id="hermes-shell-count">0 WORKOUTS</span>
+        </div>
+        <textarea id="hermes-shell-input" spellcheck="false" aria-label="Hermes editable workout JSON"></textarea>
+        <div class="shell-actions">
+          <button class="btn btn-primary" id="btn-shell-apply">APPLY</button>
+          <button class="btn btn-ghost" id="btn-shell-format">FORMAT</button>
+          <button class="btn btn-ghost" id="btn-shell-copy">COPY</button>
+          <button class="btn btn-danger" id="btn-shell-reset">RESET</button>
+        </div>
+        <div class="shell-status" id="hermes-shell-status"></div>
+      </div>
     </div>
   </div>
 
@@ -1056,7 +1058,6 @@ function renderHome() {
 
 // ── WORKOUTS SCREEN ──────────────────────────────────────────────
 function renderWorkouts() {
-  renderHermesShell();
   var days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
   var today = new Date().getDay();
   var strip = document.getElementById('schedule-strip');
@@ -1153,6 +1154,8 @@ function selectCalDay(dateStr, dayNum) {
 
 // ── STATS ────────────────────────────────────────────────────────
 function renderStats() {
+  renderHermesShell();
+  initHermesShellControls();
   var level = getCurrentLevel(), next = getNextLevel();
   document.getElementById('stat-level').textContent = level.level;
   document.getElementById('stat-level-name').textContent = level.name;
@@ -1376,7 +1379,9 @@ document.getElementById('btn-done').addEventListener('click', () => {
 // ─────────────────────────────────────────────
 //  HERMES SHELL CONTROLS
 // ─────────────────────────────────────────────
+var HERMES_SHELL_READY = false;
 function initHermesShellControls() {
+  if (HERMES_SHELL_READY) return;
   const input = document.getElementById('hermes-shell-input');
   const applyBtn = document.getElementById('btn-shell-apply');
   const formatBtn = document.getElementById('btn-shell-format');
@@ -1421,6 +1426,8 @@ function initHermesShellControls() {
     localStorage.removeItem(HERMES_STORAGE_KEY);
     location.reload();
   });
+
+  HERMES_SHELL_READY = true;
 }
 
 // ─────────────────────────────────────────────
