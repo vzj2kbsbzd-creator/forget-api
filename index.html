@@ -634,12 +634,12 @@ const WORKOUT_DB = {
       targetDays: ["Monday", "Wednesday", "Friday"],
       rounds: 3,
       exercises: [
-        { name: "Toe Taps", duration: 30, sets: 3, notes: "Alternating feet", restAfter: 15 },
-        { name: "Inside-Outside Taps", duration: 30, sets: 3, notes: "Each foot", restAfter: 15 },
-        { name: "Stationary Dribble", duration: 60, sets: 3, notes: "Box the ball", restAfter: 20 },
-        { name: "Wall Passes", duration: 60, sets: 2, notes: "Both feet", restAfter: 30 },
-        { name: "Cone Weave", duration: 45, sets: 3, notes: "Weave at speed", restAfter: 20 },
-      ]
+            { name: "Toe Taps", duration: 30, sets: 3, notes: "Alternating feet", restAfter: 15, equipment: ["Soccer Ball"] },
+            { name: "Inside-Outside Taps", duration: 30, sets: 3, notes: "Each foot", restAfter: 15, equipment: ["Soccer Ball"] },
+            { name: "Stationary Dribble", duration: 60, sets: 3, notes: "Box the ball", restAfter: 20, equipment: ["Soccer Ball"] },
+            { name: "Wall Passes", duration: 60, sets: 2, notes: "Both feet", restAfter: 30, equipment: ["Soccer Ball", "Wall"] },
+            { name: "Cone Weave", duration: 45, sets: 3, notes: "Weave at speed", restAfter: 20, equipment: ["Soccer Ball", "Cones"] },
+          ],
     },
     {
       id: "agility-speed",
@@ -651,10 +651,12 @@ const WORKOUT_DB = {
       targetDays: ["Tuesday"],
       rounds: 3,
       exercises: [
-        { name: "T-Drill", duration: 60, sets: 5, notes: "Sprint shuffle backpedal", restAfter: 30 },
-        { name: "5-10-5 Shuttle", duration: 45, sets: 6, notes: "Time yourself", restAfter: 45 },
-        { name: "100m Sprints", reps: "1", sets: 8, notes: "Full sprint", restAfter: 45 },
-      ]
+        { name: "T-Drill", duration: 60, sets: 5, notes: "Sprint shuffle backpedal", restAfter: 30, equipment: ["Cones"] },
+        { name: "5-10-5 Shuttle", duration: 45, sets: 6, notes: "Time yourself", restAfter: 45, equipment: ["Cones"] },
+        { name: "100m Sprints", reps: "1", sets: 8, notes: "Full sprint", restAfter: 45, equipment: [] },
+        { name: "Lateral Shuffles", reps: "10", sets: 4, notes: "Low stance, quick feet", restAfter: 30, equipment: [] },
+        { name: "Backpedal Sprints", reps: "20m", sets: 4, notes: "Backpedal 10m, sprint 20m", restAfter: 40, equipment: [] },
+      ],
     },
     {
       id: "soccer-endurance",
@@ -666,10 +668,13 @@ const WORKOUT_DB = {
       targetDays: ["Wednesday"],
       rounds: 4,
       exercises: [
-        { name: "High Knees", duration: 40, sets: 4, notes: "Max effort", restAfter: 20 },
-        { name: "Burpees", reps: "8", sets: 4, notes: "Explosive", restAfter: 40 },
-        { name: "Mountain Climbers", duration: 30, sets: 4, notes: "Fast pace", restAfter: 20 },
-      ]
+        { name: "High Knees", duration: 40, sets: 4, notes: "Max effort", restAfter: 20, equipment: [] },
+        { name: "Burpees", reps: "8", sets: 4, notes: "Explosive", restAfter: 40, equipment: [] },
+        { name: "Mountain Climbers", duration: 30, sets: 4, notes: "Fast pace", restAfter: 20, equipment: [] },
+        { name: "Jump Squats", reps: "15", sets: 4, notes: "Explosive, land soft", restAfter: 30, equipment: [] },
+        { name: "Tuck Jumps", reps: "10", sets: 3, notes: "Knees to chest", restAfter: 30, equipment: [] },
+        { name: "Broad Jumps", reps: "8", sets: 3, notes: "Max distance", restAfter: 40, equipment: [] },
+      ],
     },
     {
       id: "soccer-strength",
@@ -681,10 +686,15 @@ const WORKOUT_DB = {
       targetDays: ["Thursday"],
       rounds: 3,
       exercises: [
-        { name: "Squats", reps: "20", sets: 3, notes: "Full depth", restAfter: 30 },
-        { name: "Lunges", reps: "12", sets: 3, notes: "Alternating", restAfter: 30 },
-        { name: "Plank", duration: 45, sets: 3, notes: "Straight line", restAfter: 30 },
-      ]
+        { name: "Squats", reps: "20", sets: 3, notes: "Full depth", restAfter: 30, equipment: [] },
+        { name: "Lunges", reps: "12", sets: 3, notes: "Alternating", restAfter: 30, equipment: [] },
+        { name: "Plank", duration: 45, sets: 3, notes: "Straight line", restAfter: 30, equipment: [] },
+        { name: "Single-Leg Romanian Deadlift", reps: "10", sets: 3, notes: "Each leg, no weight needed", restAfter: 30, equipment: [] },
+        { name: "Glute Bridges", reps: "20", sets: 3, notes: "Squeeze at top", restAfter: 20, equipment: [] },
+        { name: "Calf Raises", reps: "25", sets: 3, notes: "Slow and controlled", restAfter: 15, equipment: [] },
+        { name: "Side Plank", duration: 30, sets: 2, notes: "Each side", restAfter: 20, equipment: [] },
+        { name: "Bicycle Crunches", reps: "20", sets: 3, notes: "Slow and controlled", restAfter: 20, equipment: [] },
+      ],
     },
     {
       id: "tired-dribble",
@@ -696,9 +706,10 @@ const WORKOUT_DB = {
       targetDays: ["Saturday"],
       rounds: 2,
       exercises: [
-        { name: "Dribble at 80%", duration: 60, sets: 2, notes: "Look up", restAfter: 30 },
-        { name: "Sprint-Dribble-Stop", duration: 45, sets: 3, notes: "20m sprints", restAfter: 30 },
-      ]
+        { name: "Dribble at 80%", duration: 60, sets: 2, notes: "Look up", restAfter: 30, equipment: ["Soccer Ball"] },
+        { name: "Sprint-Dribble-Stop", duration: 45, sets: 3, notes: "20m sprints", restAfter: 30, equipment: ["Soccer Ball"] },
+        { name: "Heavy Leg Dribble", duration: 60, sets: 2, notes: "Tired legs, keep control", restAfter: 30, equipment: ["Soccer Ball"] },
+      ],
     },
     {
       id: "recovery-flow",
@@ -710,10 +721,12 @@ const WORKOUT_DB = {
       targetDays: ["Sunday"],
       rounds: 1,
       exercises: [
-        { name: "Light Jog", duration: 120, sets: 1, notes: "Easy pace", restAfter: 0 },
-        { name: "Hamstring Stretch", duration: 30, sets: 2, notes: "Each leg", restAfter: 10 },
-        { name: "Foam Rolling", duration: 60, sets: 1, notes: "Quads, calves", restAfter: 0 },
-      ]
+        { name: "Light Jog", duration: 120, sets: 1, notes: "Easy pace", restAfter: 0, equipment: [] },
+        { name: "Hamstring Stretch", duration: 30, sets: 2, notes: "Each leg", restAfter: 10, equipment: [] },
+        { name: "Foam Rolling", duration: 60, sets: 1, notes: "Quads, calves", restAfter: 0, equipment: ["Foam Roller"] },
+        { name: "Hip Flexor Stretch", duration: 30, sets: 2, notes: "Each side", restAfter: 10, equipment: [] },
+        { name: "Cobra Stretch", duration: 30, sets: 2, notes: "Lower back release", restAfter: 10, equipment: [] },
+      ],
     },
     {
       id: "full-match-sim",
@@ -725,9 +738,51 @@ const WORKOUT_DB = {
       targetDays: ["Saturday"],
       rounds: 1,
       exercises: [
-        { name: "Fartlek Run", duration: 600, sets: 1, notes: "Random pace changes", restAfter: 60 },
-        { name: "Sprint-Recover", duration: 120, sets: 3, notes: "Sprint 20m, jog back", restAfter: 60 },
-      ]
+        { name: "Fartlek Run", duration: 600, sets: 1, notes: "Random pace changes", restAfter: 60, equipment: ["Soccer Ball"] },
+        { name: "Sprint-Recover", duration: 120, sets: 3, notes: "Sprint 20m, jog back", restAfter: 60, equipment: ["Soccer Ball"] },
+        { name: "Soccer Burpees", reps: "10", sets: 3, notes: "Sprint to ball after each", restAfter: 40, equipment: ["Soccer Ball"] },
+      ],
+    },
+    {
+      id: "bodyweight-blitz",
+      name: "BODYWEIGHT BLITZ",
+      type: "FULL BODY",
+      difficulty: "medium",
+      description: "No equipment needed — full body burn",
+      estimatedMinutes: 25,
+      targetDays: ["Monday", "Friday"],
+      rounds: 3,
+      exercises: [
+        { name: "Push-Ups", reps: "15", sets: 3, notes: "Full range of motion", restAfter: 30, equipment: [] },
+        { name: "Squats", reps: "20", sets: 3, notes: "Full depth", restAfter: 30, equipment: [] },
+        { name: "Plank", duration: 45, sets: 3, notes: "Straight line, core tight", restAfter: 30, equipment: [] },
+        { name: "Burpees", reps: "10", sets: 3, notes: "Explosive, no pausing", restAfter: 40, equipment: [] },
+        { name: "Mountain Climbers", duration: 30, sets: 3, notes: "Fast pace", restAfter: 20, equipment: [] },
+        { name: "Reverse Lunges", reps: "12", sets: 3, notes: "Alternating legs", restAfter: 30, equipment: [] },
+        { name: "Diamond Push-Ups", reps: "10", sets: 2, notes: "Triceps focus", restAfter: 30, equipment: [] },
+        { name: "Superman Hold", duration: 30, sets: 3, notes: "Back and glutes", restAfter: 20, equipment: [] },
+      ],
+    },
+    {
+      id: "core-crusher",
+      name: "CORE CRUSHER",
+      type: "CORE",
+      difficulty: "hard",
+      description: "Abs and lower back — no equipment",
+      estimatedMinutes: 20,
+      targetDays: ["Tuesday", "Thursday"],
+      rounds: 3,
+      exercises: [
+        { name: "Bicycle Crunches", reps: "20", sets: 3, notes: "Slow and controlled", restAfter: 20, equipment: [] },
+        { name: "Plank", duration: 60, sets: 3, notes: "Straight line", restAfter: 30, equipment: [] },
+        { name: "Leg Raises", reps: "15", sets: 3, notes: "Lower back pressed down", restAfter: 20, equipment: [] },
+        { name: "Side Plank", duration: 40, sets: 2, notes: "Each side", restAfter: 20, equipment: [] },
+        { name: "Flutter Kicks", reps: "20", sets: 3, notes: "Legs off the ground", restAfter: 20, equipment: [] },
+        { name: "Dead Bug", reps: "10", sets: 3, notes: "Each side, slow", restAfter: 20, equipment: [] },
+        { name: "Hollow Body Hold", duration: 30, sets: 3, notes: "Arms and legs off ground", restAfter: 25, equipment: [] },
+        { name: "Russian Twists", reps: "20", sets: 3, notes: "Feet off ground", restAfter: 20, equipment: [] },
+      ],
+    },
     },
   ],
   achievements: [
@@ -1058,7 +1113,7 @@ function renderHome() {
   } else {
     recentList.innerHTML = recent.map(function(r) {
       var wd = WORKOUT_DB.workouts.find(function(x){return x.id===r.workoutId;}) || {name:r.name||'Workout',type:'TRAINING'};
-      var cols = {STRENGTH:'#ff8c4d',CARDIO:'#4dff91',CORE:'#b44dff','FULL BODY':'#4da6ff',SOCCER:'#e8ff47',RECOVERY:'#4da6ff'};
+      var cols = {STRENGTH:'#ff8c4d',CARDIO:'#4dff91',CORE:'#b44dff','FULL BODY':'#4da6ff',SOCCER:'#e8ff47',RECOVERY:'#4da6ff',BODYWEIGHT:'#ffeb3b'};
       var col = cols[wd.type] || '#888';
       var d = new Date(r.date);
       var dStr = d.toLocaleDateString('en-US',{month:'short',day:'numeric'});
@@ -1094,7 +1149,19 @@ function openWorkoutModal(id) {
   var dc = {easy:'diff-easy',medium:'diff-medium',hard:'diff-hard'};
   var dl = {easy:'Easy',medium:'Medium',hard:'Hard'};
   var body = document.getElementById('modal-body');
-  body.innerHTML = '<div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:4px"><div class="workout-type-label">'+escapeHtml(w.type)+'</div><div class="badge '+dc[w.difficulty]+'">'+dl[w.difficulty]+'</div></div><div class="modal-title">'+escapeHtml(w.name)+'</div><div class="modal-sub">'+escapeHtml(w.description)+'</div><div style="display:flex;gap:12px;margin-bottom:16px"><span class="badge">\u23f1 '+w.estimatedMinutes+' min</span><span class="badge">\ud83d\udd04 '+w.rounds+' rounds</span><span class="badge">\ud83d\udcaa '+w.exercises.length+' exercises</span></div><div class="section-title">EXERCISES</div><div class="exercise-list">'+w.exercises.map(function(e,i) {
+  var allEquipment = [];
+  w.exercises.forEach(function(e) {
+    if (e.equipment && e.equipment.length) {
+      e.equipment.forEach(function(eq) { if (allEquipment.indexOf(eq) === -1) allEquipment.push(eq); });
+    }
+  });
+  var equipmentHtml = '';
+  if (allEquipment.length) {
+    equipmentHtml = '<div class="section-title" style="margin-top:16px">STUFF YOU NEED</div><div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px">' +
+      allEquipment.map(function(eq) { return '<div class="badge badge-accent">' + escapeHtml(eq) + '</div>'; }).join('') +
+      '</div>';
+  }
+  body.innerHTML = '<div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:4px"><div class="workout-type-label">'+escapeHtml(w.type)+'</div><div class="badge '+dc[w.difficulty]+'">'+dl[w.difficulty]+'</div></div><div class="modal-title">'+escapeHtml(w.name)+'</div><div class="modal-sub">'+escapeHtml(w.description)+'</div><div style="display:flex;gap:12px;margin-bottom:16px"><span class="badge">\u23f1 '+w.estimatedMinutes+' min</span><span class="badge">\ud83d\udd04 '+w.rounds+' rounds</span><span class="badge">\ud83d\udcaa '+w.exercises.length+' exercises</span></div>' + equipmentHtml + '<div class="section-title">EXERCISES</div><div class="exercise-list">'+w.exercises.map(function(e,i) {
     return '<div class="ex-item"><div class="ex-num">0'+(i+1)+'</div><div class="ex-info"><div class="ex-n">'+escapeHtml(e.name)+'</div>'+(e.notes?'<div class="ex-d">'+escapeHtml(e.notes)+'</div>':'')+'</div><div class="ex-tag">'+(e.duration?e.duration+'s':e.sets+'\u00d7'+escapeHtml(e.reps))+'</div></div>'+(i<w.exercises.length-1?'<div class="rest-item">\ud83d\udd50 Rest '+e.restAfter+'s</div>':'');
   }).join('')+'</div>';
   document.getElementById('modal-start-btn').onclick = function() { closeModal(); startWorkout(id); };
@@ -1228,6 +1295,12 @@ function startWorkout(id) {
   startTimer();
 }
 
+function getExerciseDuration(ex) {
+  if (ex.duration) return ex.duration;
+  var reps = parseInt(ex.reps, 10) || 10;
+  return Math.max(20, ex.sets * reps * 3);
+}
+
 function loadQueueItem() {
   if (runner.queueIdx >= runner.queue.length) { endWorkout(); return; }
   var item = runner.queue[runner.queueIdx];
@@ -1242,19 +1315,19 @@ function loadQueueItem() {
   if (item.type === 'exercise') {
     runner.exerciseCount++;
     var ex = item.exercise;
-    var dur = ex.duration;
-    runner.timeLeft = dur || 0;
+    var dur = getExerciseDuration(ex);
+    runner.timeLeft = dur;
     document.getElementById('phase-tag').className = 'phase-tag exercise';
     document.getElementById('phase-label').textContent = 'EXERCISE';
     document.getElementById('ex-number').textContent = 'EXERCISE ' + item.index + ' OF ' + item.total + ' \u00b7 ROUND ' + item.round + '/' + item.roundTotal;
     document.getElementById('ex-name').textContent = ex.name;
     document.getElementById('ex-name').classList.remove('rest-phase');
-    document.getElementById('ex-reps').textContent = dur ? dur + ' seconds' : ex.sets + ' sets \u00d7 ' + ex.reps + ' reps';
+    document.getElementById('ex-reps').textContent = ex.duration ? ex.duration + ' seconds' : ex.sets + ' sets \u00d7 ' + ex.reps + ' reps';
     document.getElementById('ex-notes').textContent = ex.notes || '';
     document.getElementById('round-info').textContent = 'ROUND ' + item.round + ' / ' + item.roundTotal;
     document.getElementById('timer-ring-path').classList.remove('rest-ring');
-    document.getElementById('timer-display-label').textContent = dur ? 'REMAINING' : 'REST IN';
-    if (!dur) { runner.timeLeft=0; updateTimerDisplay(0,0,1); document.getElementById('timer-display-num').textContent='GO!'; document.getElementById('timer-display-label').textContent='TAP NEXT WHEN DONE'; }
+    document.getElementById('timer-display-label').textContent = 'REMAINING';
+    updateTimerDisplay(dur, dur, 0);
   } else {
     runner.timeLeft = item.duration;
     document.getElementById('phase-tag').className = 'phase-tag rest';
@@ -1287,8 +1360,10 @@ function updateTimerDisplay(current, total, pct) {
 function startTimer() {
   clearInterval(runner.timerInterval);
   var item = runner.queue[runner.queueIdx];
-  if (!item || (item.type === 'exercise' && !item.exercise.duration)) return;
+  if (!item) return;
+  if (item.type === 'exercise' && runner.timeLeft <= 0) return;
   var totalTime = runner.timeLeft;
+  if (totalTime <= 0) return;
   runner.timerInterval = setInterval(function() {
     if (runner.paused) return;
     runner.timeLeft--;
