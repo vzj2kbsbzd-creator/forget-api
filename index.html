@@ -1337,10 +1337,8 @@ document.getElementById('btn-restart-ex').addEventListener('click', () => {
 });
 document.getElementById('btn-end').addEventListener('click', () => {
   if (!runner) return;
-  if (confirm('End this workout?')) {
-    try { clearInterval(runner.timerInterval); } catch(e) {}
-    try { endWorkout(); } catch(e) { switchScreen('home', document.querySelector('[data-screen="home"]')); }
-  }
+  try { clearInterval(runner.timerInterval); } catch(e) {}
+  try { endWorkout(); } catch(e) { switchScreen('home', document.querySelector('[data-screen="home"]')); }
 });
 function resetPlayBtn() {
   const btn = document.getElementById('btn-play-pause');
@@ -1443,42 +1441,30 @@ function initHermesShellControls() {
 }
 
 // ─────────────────────────────────────────────
-//  CONFETTI
+//  CONFETTI (lightweight CSS animation)
 // ─────────────────────────────────────────────
-let confettiAnim;
 function launchConfetti() {
   try {
-    const canvas = document.getElementById('confetti-canvas');
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth; canvas.height = window.innerHeight;
-    const pieces = Array.from({length: 40}, () => ({
-      x: Math.random() * canvas.width, y: -20,
-      w: Math.random() * 8 + 4, h: Math.random() * 14 + 6,
-      color: ['#e8ff47','#4dff91','#4da6ff','#ff8c4d','#b44dff','#ff4d4d'][Math.floor(Math.random()*6)],
-      speed: Math.random() * 3 + 2, angle: Math.random() * 360,
-      spin: (Math.random() - 0.5) * 8, drift: (Math.random() - 0.5) * 2
-    }));
-    let tick = 0;
-    function draw() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      pieces.forEach(p => {
-        ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.angle * Math.PI / 180);
-        ctx.fillStyle = p.color; ctx.fillRect(-p.w/2, -p.h/2, p.w, p.h); ctx.restore();
-        p.y += p.speed; p.x += p.drift; p.angle += p.spin;
-        if (p.y > canvas.height) { p.y = -20; p.x = Math.random() * canvas.width; }
-      });
-      tick++;
-      if (tick < 180) confettiAnim = requestAnimationFrame(draw);
-      else ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const container = document.createElement('div');
+    container.style.cssText = 'position:fixed;inset:0;pointer-events:none;z-index:9999;overflow:hidden;';
+    const colors = ['#e8ff47','#4dff91','#4da6ff','#ff8c4d','#b44dff','#ff4d4d'];
+    for (let i = 0; i < 30; i++) {
+      const p = document.createElement('div');
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      const left = Math.random() * 100;
+      const delay = Math.random() * 0.5;
+      const duration = 1.5 + Math.random() * 1.5;
+      p.style.cssText = `position:absolute;width:8px;height:14px;background:${color};left:${left}%;top:-20px;border-radius:2px;animation:confettiFall ${duration}s ease-in ${delay}s forwards;`;
+      container.appendChild(p);
     }
-    draw();
-  } catch(e) { /* confetti is cosmetic, ignore errors */ }
+    const style = document.createElement('style');
+    style.textContent = '@keyframes confettiFall { 0% { transform: translateY(0) rotate(0deg); opacity:1; } 100% { transform: translateY(100vh) rotate(720deg); opacity:0; } }';
+    document.head.appendChild(style);
+    document.body.appendChild(container);
+    setTimeout(() => { container.remove(); style.remove(); }, 3500);
+  } catch(e) { /* confetti is cosmetic */ }
 }
-function stopConfetti() {
-  cancelAnimationFrame(confettiAnim);
-  const canvas = document.getElementById('confetti-canvas');
-  canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
-}
+function stopConfetti() { /* no-op for CSS confetti — self-cleans */ }
 
 // ─────────────────────────────────────────────
 //  INIT
