@@ -568,6 +568,9 @@ nav { position: fixed; bottom: 0; left: 0; right: 0; z-index: 100; background: r
       <div class="section-title" style="margin-top:4px">ACHIEVEMENTS</div>
       <div class="achievements-grid" id="achievements-grid"></div>
 
+      <div class="section-title" style="margin-top:24px">DANGER ZONE</div>
+      <button class="btn btn-danger" id="btn-reset-progress" style="width:100%;margin-bottom:20px">RESET ALL PROGRESS</button>
+
       <div class="section-title" style="margin-top:24px">API</div>
       <div class="agent-shell card">
         <div class="agent-shell-head">
@@ -1337,9 +1340,23 @@ document.getElementById('btn-restart-ex').addEventListener('click', () => {
 });
 document.getElementById('btn-end').addEventListener('click', () => {
   if (!runner) return;
-  try { clearInterval(runner.timerInterval); } catch(e) {}
-  try { endWorkout(); } catch(e) { switchScreen('home', document.querySelector('[data-screen="home"]')); }
+  if (!confirm('End this workout early? Progress will not be saved.')) return;
+  clearInterval(runner.timerInterval);
+  document.getElementById('screen-runner').classList.remove('active');
+  document.body.style.overflow = '';
+  runner = null;
 });
+document.getElementById('btn-reset-progress').addEventListener('click', () => {
+  if (!confirm('DELETE ALL PROGRESS? This will wipe your XP, streaks, achievements, and workout history. This cannot be undone.')) return;
+  if (!confirm('Are you absolutely sure? This resets everything back to zero.')) return;
+  localStorage.removeItem('forge-state');
+  STATE = { xp: 0, completedWorkouts: [], lastWorkoutDate: null, currentStreak: 0, bestStreak: 0, unlockedAchievements: [] };
+  saveState();
+  renderStats();
+  renderHome();
+  showToast('All progress has been reset');
+});
+
 function resetPlayBtn() {
   const btn = document.getElementById('btn-play-pause');
   btn.textContent = '⏸'; btn.style.background = 'var(--accent)'; btn.style.color = '#0a0a0a';
