@@ -1288,37 +1288,7 @@ function startTimer() {
   }, 1000);
 }
 
-function endWorkout() {
-  clearInterval(runner.timerInterval);
-  var elapsed = Math.round((Date.now() - runner.startTime) / 60000);
-  var xpEarned = Math.max(50, elapsed * 8 + runner.exerciseCount * 5);
-  var calories = Math.round(elapsed * 7.5);
-  var today = new Date().toISOString();
-  STATE.completedWorkouts.push({workoutId:runner.workout.id,name:runner.workout.name,date:today,minutes:elapsed,xp:xpEarned,exercises:runner.exerciseCount});
-  STATE.lastWorkoutDate = today;
-  STATE.currentStreak++;
-  if (STATE.currentStreak > STATE.bestStreak) STATE.bestStreak = STATE.currentStreak;
-  addXP(xpEarned);
-  checkAchievements();
-  saveState();
-  // Sync to server
-  apiFetch('/api/state', {method:'POST',body:JSON.stringify(STATE)}).catch(function(){});
-  document.getElementById('screen-runner').classList.remove('active');
-  document.getElementById('comp-time').textContent = elapsed + 'm';
-  document.getElementById('comp-exercises').textContent = runner.exerciseCount;
-  document.getElementById('comp-cal').textContent = calories;
-  document.getElementById('xp-earned').textContent = '\u26a1 +' + xpEarned + ' XP EARNED';
-  document.getElementById('comp-sub').textContent = runner.workout.name + ' \u2014 ' + elapsed + ' minutes';
-  document.getElementById('completion-overlay').classList.add('active');
-  launchConfetti();
-}
-
-document.getElementById('btn-done').addEventListener('click', function() {
-  document.getElementById('completion-overlay').classList.remove('active');
-  stopConfetti();
-  document.body.style.overflow = '';
-  switchScreen('home', document.querySelector('[data-screen="home"]'));
-});
+// (first endWorkout removed — merged into second at line ~1365)
 
 
 // Controls
@@ -1461,7 +1431,7 @@ function launchConfetti() {
   const canvas = document.getElementById('confetti-canvas');
   const ctx = canvas.getContext('2d');
   canvas.width = window.innerWidth; canvas.height = window.innerHeight;
-  const pieces = Array.from({length: 120}, () => ({
+  const pieces = Array.from({length: 60}, () => ({
     x: Math.random() * canvas.width, y: -20,
     w: Math.random() * 8 + 4, h: Math.random() * 14 + 6,
     color: ['#e8ff47','#4dff91','#4da6ff','#ff8c4d','#b44dff','#ff4d4d'][Math.floor(Math.random()*6)],
