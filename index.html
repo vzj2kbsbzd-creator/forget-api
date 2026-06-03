@@ -532,7 +532,7 @@ nav { position: fixed; bottom: 0; left: 0; right: 0; z-index: 100; background: r
       <div class="section-title">TODAY'S RUN</div>
       <div class="card run-card" id="today-run-card" style="margin-bottom:20px;">
         <div class="run-type-label" id="run-type-label">SCHEDULED</div>
-        <div class="run-distance" id="run-distance">--<span> km</span></div>
+        <div class="run-distance" id="run-distance">--<span> mi</span></div>
         <div class="run-details" id="run-details"></div>
         <div class="run-ball-note" id="run-ball-note" style="display:none"></div>
         <div class="run-rest-msg" id="run-rest-msg" style="display:none">
@@ -1582,6 +1582,9 @@ function renderStats() {
   }).join('');
 }
 
+// ── WORKOUT RUNNER STATE ──────────────────────────────────────────
+var runner = null;
+
 // ── WORKOUT RUNNER ───────────────────────────────────────────────
 function buildRunnerQueue(workout) {
   var queue = [];
@@ -1806,7 +1809,7 @@ function initHermesShellControls() {
 
   applyBtn.addEventListener('click', () => {
     try {
-      const shell = applyWorkoutShell(JSON.parse(input.value));
+      const shell = applyWorkoutShellSync(JSON.parse(input.value));
       input.value = JSON.stringify(shell, null, 2);
       setShellStatus(`Applied ${shell.workouts.length} workouts`, 'ok');
       showToast('Hermes shell applied');
@@ -1895,9 +1898,8 @@ document.getElementById('workout-modal').addEventListener('touchend', e => {
   sheet.style.transform = '';
   if (delta > 100) closeModal();
 });
-</script>
-</body>
-</html>// ── LOG RUN MODAL ────────────────────────────────────────────────
+
+// ── LOG RUN MODAL ────────────────────────────────────────────────
 function openLogRunModal() {
   var run = getTodayRun();
   if (!run) return;
@@ -1969,6 +1971,9 @@ function editRun(dateStr) {
   renderHome();
   renderCalendar();
   showToast('\u2705 Run updated');
-}
+});
+</script>
+</body>
+</html>
 
 
