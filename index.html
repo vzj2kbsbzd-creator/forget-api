@@ -450,6 +450,36 @@ nav { position: fixed; bottom: 0; left: 0; right: 0; z-index: 100; background: r
   <div class="xp-earned" id="xp-earned">⚡ +250 XP EARNED</div>
   <button class="btn btn-primary" id="btn-done" style="max-width:320px">BACK TO HOME</button>
 </div>
+<!-- LOG RUN MODAL -->
+<div class="modal-overlay" id="log-run-modal">
+  <div class="modal-sheet">
+    <div class="modal-handle"></div>
+    <div class="modal-title" id="log-run-title">LOG RUN</div>
+    <div class="modal-sub" id="log-run-sub">Enter your actual run data</div>
+    <div style="display:flex;gap:10px;margin-bottom:12px">
+      <div style="flex:1">
+        <div class="section-title">DISTANCE</div>
+        <div style="display:flex;align-items:center;gap:6px">
+          <input type="number" id="log-dist" step="0.1" min="0" placeholder="0.0" style="width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:12px;color:var(--text);font-size:24px;font-family:'Bebas Neue',sans-serif;text-align:center;outline:none">
+          <span style="font-size:14px;color:var(--text2)" id="log-dist-unit">mi</span>
+        </div>
+      </div>
+      <div style="flex:1">
+        <div class="section-title">TIME (min)</div>
+        <input type="number" id="log-time" step="1" min="0" placeholder="0" style="width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:12px;color:var(--text);font-size:24px;font-family:'Bebas Neue',sans-serif;text-align:center;outline:none">
+      </div>
+    </div>
+    <div style="margin-bottom:16px">
+      <div class="section-title">NOTES (optional)</div>
+      <input type="text" id="log-notes" placeholder="How did it feel?" style="width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:10px 12px;color:var(--text);font-size:14px;outline:none">
+    </div>
+    <div style="display:flex;gap:10px">
+      <button class="btn btn-ghost" style="flex:1" onclick="closeLogRunModal()">CANCEL</button>
+      <button class="btn btn-primary" style="flex:2" id="btn-save-run">SAVE RUN</button>
+    </div>
+  </div>
+</div>
+
 
 <!-- ═══════════════════════════════════════
      WORKOUT DETAIL MODAL
@@ -1497,7 +1527,7 @@ function selectCalDay(dateStr, dayNum) {
   if (dayWorkouts.length>0) {
     html += dayWorkouts.map(function(r) {
       var wd = WORKOUT_DB.workouts.find(function(x){return x.id===r.workoutId;});
-      return '<div class="card-sm" style="margin-bottom:8px"><div style="font-weight:600;font-size:15px">'+(wd?wd.name:r.name)+'</div><div style="font-size:12px;color:var(--text2);margin-top:4px">'+(r.minutes||0)+' min \u00b7 +'+(r.xp||0)+' XP</div></div>';
+      var editBtn = '<button style="background:none;border:none;color:var(--text3);cursor:pointer;font-size:12px;margin-left:8px" onclick="editRun(\''+r.date+'\')" title="Edit">✏️</button>'; return '<div class="card-sm" style="margin-bottom:8px"><div style="font-weight:600;font-size:15px">'+(wd?wd.name:r.name)+'</div><div style="font-size:12px;color:var(--text2);margin-top:4px">'+(r.minutes||0)+' min \u2027 +'+(r.xp||0)+' XP '+editBtn+'</div></div>';
     }).join('');
   }
 
@@ -1712,28 +1742,7 @@ document.getElementById('btn-reset-progress').addEventListener('click', () => {
 });
 
 document.getElementById('btn-log-run').addEventListener('click', function() {
-  var run = getTodayRun();
-  if (!run) return;
-  var today = new Date().toISOString();
-  var d = dist(run.distKm);
-  STATE.completedWorkouts.push({
-    workoutId: 'run-' + run.type + '-' + today.split('T')[0],
-    name: run.name + ' (' + (d > 0 ? d + unitLabel() : 'ball work') + ')',
-    date: today,
-    minutes: Math.round(d * 6),
-    xp: Math.round(d * CONFIG.xpPerMile + CONFIG.xpPerWorkout),
-    exercises: 0,
-    type: 'run'
-  });
-  STATE.lastWorkoutDate = today;
-  STATE.currentStreak++;
-  if (STATE.currentStreak > STATE.bestStreak) STATE.bestStreak = STATE.currentStreak;
-  addXP(Math.round(d * CONFIG.xpPerMile + CONFIG.xpPerWorkout));
-  checkAchievements();
-  saveState();
-  renderHome();
-  if (document.getElementById('screen-calendar').classList.contains('active')) renderCalendar();
-  showToast('\ud83c\udfc3 Run logged! +' + Math.round(d * CONFIG.xpPerMile + CONFIG.xpPerWorkout) + ' XP');
+  openLogRunModal();
 });
 
 function resetPlayBtn() {
@@ -1888,4 +1897,78 @@ document.getElementById('workout-modal').addEventListener('touchend', e => {
 });
 </script>
 </body>
-</html>
+</html>// ── LOG RUN MODAL ────────────────────────────────────────────────
+function openLogRunModal() {
+  var run = getTodayRun();
+  if (!run) return;
+  document.getElementById('log-run-title').textContent = 'LOG: ' + run.name;
+  var plannedDist = dist(run.distKm);
+  document.getElementById('log-dist').value = plannedDist > 0 ? plannedDist : '';
+  document.getElementById('log-dist-unit').textContent = unitLabel();
+  document.getElementById('log-time').value = '';
+  document.getElementById('log-notes').value = '';
+  document.getElementById('log-run-modal').classList.add('active');
+}
+
+function closeLogRunModal() {
+  document.getElementById('log-run-modal').classList.remove('active');
+}
+
+document.getElementById('log-run-modal').addEventListener('click', function(e) {
+  if (e.target === document.getElementById('log-run-modal')) closeLogRunModal();
+});
+
+document.getElementById('btn-save-run').addEventListener('click', function() {
+  var run = getTodayRun();
+  if (!run) return;
+  var d = parseFloat(document.getElementById('log-dist').value) || 0;
+  var t = parseInt(document.getElementById('log-time').value) || 0;
+  var notes = document.getElementById('log-notes').value || '';
+  var today = new Date().toISOString();
+  var xp = Math.round(d * CONFIG.xpPerMile + CONFIG.xpPerWorkout + (t > 0 ? t : 0));
+
+  STATE.completedWorkouts.push({
+    workoutId: 'run-' + run.type + '-' + today.split('T')[0],
+    name: run.name + (d > 0 ? ' (' + d + unitLabel() + ')' : ''),
+    date: today,
+    minutes: t,
+    xp: xp,
+    exercises: 0,
+    type: 'run',
+    notes: notes
+  });
+  STATE.lastWorkoutDate = today;
+  STATE.currentStreak++;
+  if (STATE.currentStreak > STATE.bestStreak) STATE.bestStreak = STATE.currentStreak;
+  addXP(xp);
+  checkAchievements();
+  saveState();
+  renderHome();
+  if (document.getElementById('screen-calendar').classList.contains('active')) renderCalendar();
+  closeLogRunModal();
+  showToast('\ud83c\udfc3 Run logged! +' + xp + ' XP');
+});
+
+// ── EDIT RUN ─────────────────────────────────────────────────────
+function editRun(dateStr) {
+  // Find the run in STATE.completedWorkouts
+  var idx = STATE.completedWorkouts.findIndex(function(r) { return r.date === dateStr; });
+  if (idx < 0) return;
+  var r = STATE.completedWorkouts[idx];
+  var newDist = prompt('Distance (' + unitLabel() + '):', r.name.match(/\d+\.?\d*/)?r.name.match(/\d+\.?\d*/)[0]:'');
+  if (newDist === null) return;
+  var newTime = prompt('Time (minutes):', r.minutes || '');
+  if (newTime === null) return;
+  newDist = parseFloat(newDist) || 0;
+  newTime = parseInt(newTime) || 0;
+  var xp = Math.round(newDist * CONFIG.xpPerMile + CONFIG.xpPerWorkout + newTime);
+  STATE.completedWorkouts[idx].minutes = newTime;
+  STATE.completedWorkouts[idx].xp = xp;
+  STATE.completedWorkouts[idx].name = r.name.replace(/\([^)]+\)/, '') + (newDist > 0 ? ' (' + newDist + unitLabel() + ')' : '');
+  saveState();
+  renderHome();
+  renderCalendar();
+  showToast('\u2705 Run updated');
+}
+
+
