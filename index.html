@@ -840,102 +840,102 @@ const WORKOUT_DB = {
 // ── RUNNING SCHEDULE ─────────────────────────────────────────────
 // 12-week JV soccer prep running plan
 const RUN_SCHEDULE = {
-  // Week 1 (Jun 2-8)
-  "2026-06-02": { type: "run", name: "Easy Run", distance: 3, pace: "5:15-5:30/km", effort: "Easy", ballHandling: "10 min dribbling after", week: 1, day: "Monday" },
-  "2026-06-03": { type: "run", name: "Ball Handling + Light Jog", distance: 1.5, pace: "Easy", effort: "Easy", ballHandling: "20 min dribbling drills", week: 1, day: "Tuesday" },
-  "2026-06-04": { type: "run", name: "Easy Run", distance: 3, pace: "5:15-5:30/km", effort: "Easy", ballHandling: null, week: 1, day: "Wednesday" },
-  "2026-06-05": { type: "rest", name: "Rest Day", distance: 0, effort: "Rest", ballHandling: "Stretch 10 min if tight", week: 1, day: "Thursday" },
-  "2026-06-06": { type: "run", name: "Easy Run", distance: 2.5, pace: "5:00-5:15/km", effort: "Easy", ballHandling: null, week: 1, day: "Friday" },
-  "2026-06-07": { type: "run", name: "Long Run", distance: 3.5, pace: "5:15-5:30/km", effort: "Easy", ballHandling: "5 min tired dribble after", week: 1, day: "Saturday" },
-  "2026-06-08": { type: "rest", name: "Rest Day", distance: 0, effort: "Rest", ballHandling: null, week: 1, day: "Sunday" },
-  // Week 2 (Jun 9-15)
-  "2026-06-09": { type: "run", name: "Easy Run", distance: 3, pace: "5:00-5:30/km", effort: "Easy", ballHandling: "10 min after", week: 2, day: "Monday" },
-  "2026-06-10": { type: "run", name: "Ball Handling + Sprints", distance: 1, pace: "Easy + 80% sprints", effort: "Moderate", ballHandling: "10 min dribble, then 4x100m sprints", week: 2, day: "Tuesday" },
-  "2026-06-11": { type: "run", name: "Easy Run", distance: 3, pace: "5:00-5:15/km", effort: "Easy", ballHandling: null, week: 2, day: "Wednesday" },
-  "2026-06-12": { type: "rest", name: "Rest Day", distance: 0, effort: "Rest", ballHandling: null, week: 2, day: "Thursday" },
-  "2026-06-13": { type: "run", name: "Easy Run", distance: 3, pace: "5:00-5:15/km", effort: "Easy", ballHandling: null, week: 2, day: "Friday" },
-  "2026-06-14": { type: "run", name: "Long Run", distance: 4, pace: "5:15-5:30/km", effort: "Easy", ballHandling: "5 min tired dribble after", week: 2, day: "Saturday" },
-  "2026-06-15": { type: "rest", name: "Rest Day", distance: 0, effort: "Rest", ballHandling: null, week: 2, day: "Sunday" },
-  // Week 3 (Jun 16-22)
-  "2026-06-16": { type: "run", name: "Easy Run", distance: 3.5, pace: "5:00-5:30/km", effort: "Easy", ballHandling: "10 min after", week: 3, day: "Monday" },
-  "2026-06-17": { type: "run", name: "Intervals", distance: 5, pace: "4:00/km for intervals", effort: "Hard", ballHandling: null, details: "1km WU + 6x400m + 1km CD, 90s rest", week: 3, day: "Tuesday" },
-  "2026-06-18": { type: "run", name: "Easy Run", distance: 3, pace: "5:15-5:30/km", effort: "Easy", ballHandling: null, week: 3, day: "Wednesday" },
-  "2026-06-19": { type: "ball", name: "Ball Handling", distance: 0, effort: "Moderate", ballHandling: "20 min dribbling through cones, weak foot emphasis", week: 3, day: "Thursday" },
-  "2026-06-20": { type: "run", name: "Easy Run", distance: 3.5, pace: "5:00-5:15/km", effort: "Easy", ballHandling: null, week: 3, day: "Friday" },
-  "2026-06-21": { type: "run", name: "Long Run", distance: 5, pace: "5:15-5:30/km", effort: "Easy", ballHandling: "5 min tired dribble after", week: 3, day: "Saturday" },
-  "2026-06-22": { type: "rest", name: "Rest Day", distance: 0, effort: "Rest", ballHandling: null, week: 3, day: "Sunday" },
-  // Week 4 (Jun 23-29)
-  "2026-06-23": { type: "run", name: "Easy Run", distance: 3.5, pace: "5:00-5:30/km", effort: "Easy", ballHandling: "10 min after", week: 4, day: "Monday" },
-  "2026-06-24": { type: "run", name: "Speed Intervals", distance: 4, pace: "3:30/km for intervals", effort: "Hard", ballHandling: null, details: "1km WU + 8x200m + 1km CD, 60s rest", week: 4, day: "Tuesday" },
-  "2026-06-25": { type: "run", name: "Easy Run", distance: 3, pace: "5:15-5:30/km", effort: "Easy", ballHandling: null, week: 4, day: "Wednesday" },
-  "2026-06-26": { type: "ball", name: "Ball Handling + Agility", distance: 0, effort: "Moderate", ballHandling: "Ladder drills, cone weaves, dribble at speed", week: 4, day: "Thursday" },
-  "2026-06-27": { type: "run", name: "Easy Run", distance: 3.5, pace: "5:00-5:15/km", effort: "Easy", ballHandling: null, week: 4, day: "Friday" },
-  "2026-06-28": { type: "run", name: "Long Run", distance: 5.5, pace: "5:15-5:30/km", effort: "Easy", ballHandling: "5 min tired dribble after", week: 4, day: "Saturday" },
-  "2026-06-29": { type: "rest", name: "Rest Day", distance: 0, effort: "Rest", ballHandling: null, week: 4, day: "Sunday" },
-  // Week 5 (Jun 30-Jul 6)
-  "2026-06-30": { type: "run", name: "Easy Run", distance: 4, pace: "5:00-5:30/km", effort: "Easy", ballHandling: "10 min after", week: 5, day: "Monday" },
-  "2026-07-01": { type: "run", name: "Tempo Run", distance: 5, pace: "4:30/km tempo", effort: "Hard", ballHandling: null, details: "1km WU + 3km tempo + 1km CD", week: 5, day: "Tuesday" },
-  "2026-07-02": { type: "run", name: "Easy Run", distance: 3, pace: "5:15-5:30/km", effort: "Easy", ballHandling: null, week: 5, day: "Wednesday" },
-  "2026-07-03": { type: "ball", name: "Ball Handling", distance: 0, effort: "Moderate", ballHandling: "Dribbling under pressure", week: 5, day: "Thursday" },
-  "2026-07-04": { type: "run", name: "Easy Run", distance: 3.5, pace: "5:00-5:15/km", effort: "Easy", ballHandling: null, week: 5, day: "Friday" },
-  "2026-07-05": { type: "run", name: "Long Run", distance: 6, pace: "5:15-5:30/km", effort: "Easy", ballHandling: "5 min tired dribble after", week: 5, day: "Saturday" },
-  "2026-07-06": { type: "rest", name: "Rest Day", distance: 0, effort: "Rest", ballHandling: null, week: 5, day: "Sunday" },
-  // Week 6 (Jul 7-13)
-  "2026-07-07": { type: "run", name: "Easy Run", distance: 4, pace: "5:00-5:30/km", effort: "Easy", ballHandling: "10 min after", week: 6, day: "Monday" },
-  "2026-07-08": { type: "run", name: "Fartlek", distance: 4, pace: "Varies", effort: "Hard", ballHandling: null, details: "2min hard / 2min easy alternating", week: 6, day: "Tuesday" },
-  "2026-07-09": { type: "run", name: "Easy Run", distance: 3.5, pace: "5:15-5:30/km", effort: "Easy", ballHandling: null, week: 6, day: "Wednesday" },
-  "2026-07-10": { type: "ball", name: "Ball Handling + Sprints", distance: 0, effort: "Hard", ballHandling: "Dribble -> sprint 50m -> dribble back x8", week: 6, day: "Thursday" },
-  "2026-07-11": { type: "run", name: "Easy Run", distance: 3.5, pace: "5:00-5:15/km", effort: "Easy", ballHandling: null, week: 6, day: "Friday" },
-  "2026-07-12": { type: "run", name: "Long Run", distance: 6.5, pace: "5:15-5:30/km", effort: "Easy", ballHandling: "5 min tired dribble after", week: 6, day: "Saturday" },
-  "2026-07-13": { type: "rest", name: "Rest Day", distance: 0, effort: "Rest", ballHandling: null, week: 6, day: "Sunday" },
-  // Week 7 (Jul 14-20)
-  "2026-07-14": { type: "run", name: "Easy Run", distance: 4, pace: "5:00-5:30/km", effort: "Easy", ballHandling: "10 min after", week: 7, day: "Monday" },
-  "2026-07-15": { type: "run", name: "Repeated Sprints", distance: 4, pace: "Full sprint", effort: "Max", ballHandling: null, details: "1km WU + 10x100m + 1km CD, 45s rest", week: 7, day: "Tuesday" },
-  "2026-07-16": { type: "run", name: "Easy Run", distance: 4, pace: "5:15-5:30/km", effort: "Easy", ballHandling: null, week: 7, day: "Wednesday" },
-  "2026-07-17": { type: "ball", name: "Ball Handling", distance: 0, effort: "Moderate", ballHandling: "30 min: dribbling, passing, receiving on the move", week: 7, day: "Thursday" },
-  "2026-07-18": { type: "run", name: "Tempo Run", distance: 6, pace: "4:15-4:30/km tempo", effort: "Hard", ballHandling: null, details: "1km WU + 4km tempo + 1km CD", week: 7, day: "Friday" },
-  "2026-07-19": { type: "run", name: "Long Run", distance: 7, pace: "5:15-5:30/km", effort: "Easy", ballHandling: "5 min tired dribble after", week: 7, day: "Saturday" },
-  "2026-07-20": { type: "rest", name: "Rest Day", distance: 0, effort: "Rest", ballHandling: null, week: 7, day: "Sunday" },
-  // Week 8 (Jul 21-27)
-  "2026-07-21": { type: "run", name: "Easy Run", distance: 4, pace: "5:00-5:30/km", effort: "Easy", ballHandling: "10 min after", week: 8, day: "Monday" },
-  "2026-07-22": { type: "run", name: "Intervals", distance: 6, pace: "4:00/km for intervals", effort: "Hard", ballHandling: null, details: "1km WU + 5x800m + 1km CD, 2min rest", week: 8, day: "Tuesday" },
-  "2026-07-23": { type: "run", name: "Easy Run", distance: 4, pace: "5:15-5:30/km", effort: "Easy", ballHandling: null, week: 8, day: "Wednesday" },
-  "2026-07-24": { type: "ball", name: "Ball Handling + Agility", distance: 0, effort: "Moderate", ballHandling: "T-drill, 5-10-5 shuttle, cone reaction drill", week: 8, day: "Thursday" },
-  "2026-07-25": { type: "run", name: "Easy Run", distance: 3.5, pace: "5:00-5:15/km", effort: "Easy", ballHandling: null, week: 8, day: "Friday" },
-  "2026-07-26": { type: "run", name: "Long Run", distance: 7, pace: "5:15-5:30/km", effort: "Easy", ballHandling: "5 min tired dribble after", week: 8, day: "Saturday" },
-  "2026-07-27": { type: "rest", name: "Rest Day", distance: 0, effort: "Rest", ballHandling: null, week: 8, day: "Sunday" },
-  // Week 9 (Jul 28-Aug 3)
-  "2026-07-28": { type: "run", name: "Easy Run", distance: 4, pace: "5:00-5:30/km", effort: "Easy", ballHandling: "10 min after", week: 9, day: "Monday" },
-  "2026-07-29": { type: "run", name: "RSA + Ball Work", distance: 4, pace: "Full sprint", effort: "Max", ballHandling: "10 min dribbling at end", details: "1km WU + 12x100m + 1km CD, 45s rest", week: 9, day: "Tuesday" },
-  "2026-07-30": { type: "run", name: "Easy Run", distance: 4, pace: "5:15-5:30/km", effort: "Easy", ballHandling: null, week: 9, day: "Wednesday" },
-  "2026-07-31": { type: "run", name: "Game Simulation", distance: 3, pace: "Random", effort: "Hard", ballHandling: "20 min ball handling after", details: "3km fartlek + ball work", week: 9, day: "Thursday" },
-  "2026-08-01": { type: "run", name: "Tempo Run", distance: 6, pace: "4:15/km tempo", effort: "Hard", ballHandling: null, details: "1km WU + 4km tempo + 1km CD", week: 9, day: "Friday" },
-  "2026-08-02": { type: "run", name: "Long Run", distance: 7.5, pace: "5:15-5:30/km", effort: "Easy", ballHandling: "5 min tired dribble after", week: 9, day: "Saturday" },
-  "2026-08-03": { type: "rest", name: "Rest Day", distance: 0, effort: "Rest", ballHandling: null, week: 9, day: "Sunday" },
-  // Week 10 (Aug 4-10)
-  "2026-08-04": { type: "run", name: "Easy Run", distance: 4, pace: "5:00-5:30/km", effort: "Easy", ballHandling: "10 min after", week: 10, day: "Monday" },
-  "2026-08-05": { type: "run", name: "Intervals", distance: 5, pace: "3:45/km for intervals", effort: "Hard", ballHandling: null, details: "1km WU + 6x400m + 1km CD, 90s rest", week: 10, day: "Tuesday" },
-  "2026-08-06": { type: "run", name: "Easy Run", distance: 4, pace: "5:15-5:30/km", effort: "Easy", ballHandling: null, week: 10, day: "Wednesday" },
-  "2026-08-07": { type: "ball", name: "Ball Handling + Agility", distance: 0, effort: "Moderate", ballHandling: "Full session: dribbling, passing, agility ladder, cone drills", week: 10, day: "Thursday" },
-  "2026-08-08": { type: "run", name: "Easy Run", distance: 3.5, pace: "5:00-5:15/km", effort: "Easy", ballHandling: null, week: 10, day: "Friday" },
-  "2026-08-09": { type: "run", name: "Long Run", distance: 8, pace: "5:15-5:30/km", effort: "Easy", ballHandling: "5 min tired dribble after", week: 10, day: "Saturday" },
-  "2026-08-10": { type: "rest", name: "Rest Day", distance: 0, effort: "Rest", ballHandling: null, week: 10, day: "Sunday" },
-  // Week 11 (Aug 11-17)
-  "2026-08-11": { type: "run", name: "Easy Run", distance: 4, pace: "5:00-5:30/km", effort: "Easy", ballHandling: "10 min after", week: 11, day: "Monday" },
-  "2026-08-12": { type: "run", name: "RSA", distance: 4, pace: "Full sprint", effort: "Max", ballHandling: null, details: "1km WU + 10x100m + 1km CD, 45s rest", week: 11, day: "Tuesday" },
-  "2026-08-13": { type: "run", name: "Easy Run", distance: 4, pace: "5:15-5:30/km", effort: "Easy", ballHandling: null, week: 11, day: "Wednesday" },
-  "2026-08-14": { type: "run", name: "Game Simulation", distance: 4, pace: "Random", effort: "Hard", ballHandling: "20 min ball work after", details: "4km fartlek + ball work", week: 11, day: "Thursday" },
-  "2026-08-15": { type: "run", name: "Easy Run", distance: 3, pace: "5:15-5:30/km", effort: "Easy", ballHandling: null, week: 11, day: "Friday" },
-  "2026-08-16": { type: "run", name: "Long Run", distance: 7, pace: "5:15-5:30/km", effort: "Easy", ballHandling: "5 min tired dribble after", week: 11, day: "Saturday" },
-  "2026-08-17": { type: "rest", name: "Rest Day", distance: 0, effort: "Rest", ballHandling: null, week: 11, day: "Sunday" },
-  // Week 12 (Aug 18-24) - Taper + Tryout
-  "2026-08-18": { type: "run", name: "Easy Run", distance: 3.5, pace: "5:00-5:30/km", effort: "Easy", ballHandling: "10 min after", week: 12, day: "Monday" },
-  "2026-08-19": { type: "run", name: "Light Intervals", distance: 4, pace: "3:45/km for intervals", effort: "Moderate", ballHandling: null, details: "1km WU + 4x200m + 1km CD", week: 12, day: "Tuesday" },
-  "2026-08-20": { type: "run", name: "Easy Run", distance: 3.5, pace: "5:15-5:30/km", effort: "Easy", ballHandling: null, week: 12, day: "Wednesday" },
-  "2026-08-21": { type: "run", name: "Game Simulation (Light)", distance: 3, pace: "Random", effort: "Moderate", ballHandling: "15 min ball handling after", details: "3km fartlek, moderate effort", week: 12, day: "Thursday" },
-  "2026-08-22": { type: "run", name: "Easy Run or Rest", distance: 2, pace: "Easy", effort: "Easy", ballHandling: null, week: 12, day: "Friday" },
-  "2026-08-23": { type: "run", name: "🏆 TRYOUT DAY", distance: 5, pace: "Race pace", effort: "Max", ballHandling: "5km time trial - target sub-20:00!", week: 12, day: "Saturday" },
-  "2026-08-24": { type: "rest", name: "Rest Day", distance: 0, effort: "Rest", ballHandling: "You did it! Recover and celebrate.", week: 12, day: "Sunday" },
+  // Week 1
+  "2026-06-02": { type: "run", name: "Easy Run", distance: 1.9, pace: "8:27-8:51/mile", effort: "Easy", ballHandling: "10 min dribbling after", week: 1, day: "Monday" },
+  "2026-06-03": { type: "run", name: "Ball Handling + Light Jog", distance: 0.9, pace: "Easy", effort: "Easy", ballHandling: "20 min dribbling drills", week: 1, day: "Tuesday" },
+  "2026-06-04": { type: "run", name: "Easy Run", distance: 1.9, pace: "8:27-8:51/mile", effort: "Easy", ballHandling: null, week: 1, day: "Wednesday" },
+  "2026-06-05": { type: "rest", name: "Rest Day", distance: 0.0, pace: null, effort: "Rest", ballHandling: "Stretch 10 min if tight", week: 1, day: "Thursday" },
+  "2026-06-06": { type: "run", name: "Easy Run", distance: 1.6, pace: "8:03-8:27/mile", effort: "Easy", ballHandling: null, week: 1, day: "Friday" },
+  "2026-06-07": { type: "run", name: "Long Run", distance: 2.2, pace: "8:27-8:51/mile", effort: "Easy", ballHandling: "5 min tired dribble after", week: 1, day: "Saturday" },
+  "2026-06-08": { type: "rest", name: "Rest Day", distance: 0.0, pace: null, effort: "Rest", ballHandling: null, week: 1, day: "Sunday" },
+  // Week 2
+  "2026-06-09": { type: "run", name: "Easy Run", distance: 1.9, pace: "8:03-8:51/mile", effort: "Easy", ballHandling: "10 min after", week: 2, day: "Monday" },
+  "2026-06-10": { type: "run", name: "Ball Handling + Sprints", distance: 0.6, pace: "Easy + 80% sprints", effort: "Moderate", ballHandling: "10 min dribble, then 4x100m sprints", week: 2, day: "Tuesday" },
+  "2026-06-11": { type: "run", name: "Easy Run", distance: 1.9, pace: "8:03-8:27/mile", effort: "Easy", ballHandling: null, week: 2, day: "Wednesday" },
+  "2026-06-12": { type: "rest", name: "Rest Day", distance: 0.0, pace: null, effort: "Rest", ballHandling: null, week: 2, day: "Thursday" },
+  "2026-06-13": { type: "run", name: "Easy Run", distance: 1.9, pace: "8:03-8:27/mile", effort: "Easy", ballHandling: null, week: 2, day: "Friday" },
+  "2026-06-14": { type: "run", name: "Long Run", distance: 2.5, pace: "8:27-8:51/mile", effort: "Easy", ballHandling: "5 min tired dribble after", week: 2, day: "Saturday" },
+  "2026-06-15": { type: "rest", name: "Rest Day", distance: 0.0, pace: null, effort: "Rest", ballHandling: null, week: 2, day: "Sunday" },
+  // Week 3
+  "2026-06-16": { type: "run", name: "Easy Run", distance: 2.2, pace: "8:03-8:51/mile", effort: "Easy", ballHandling: "10 min after", week: 3, day: "Monday" },
+  "2026-06-17": { type: "run", name: "Intervals", distance: 3.1, pace: "6:26/mile for intervals", effort: "Hard", ballHandling: null, week: 3, day: "Tuesday" },
+  "2026-06-18": { type: "run", name: "Easy Run", distance: 1.9, pace: "8:27-8:51/mile", effort: "Easy", ballHandling: null, week: 3, day: "Wednesday" },
+  "2026-06-19": { type: "ball", name: "Ball Handling", distance: 0.0, pace: null, effort: "Moderate", ballHandling: "20 min dribbling through cones, weak foot emphasis", week: 3, day: "Thursday" },
+  "2026-06-20": { type: "run", name: "Easy Run", distance: 2.2, pace: "8:03-8:27/mile", effort: "Easy", ballHandling: null, week: 3, day: "Friday" },
+  "2026-06-21": { type: "run", name: "Long Run", distance: 3.1, pace: "8:27-8:51/mile", effort: "Easy", ballHandling: "5 min tired dribble after", week: 3, day: "Saturday" },
+  "2026-06-22": { type: "rest", name: "Rest Day", distance: 0.0, pace: null, effort: "Rest", ballHandling: null, week: 3, day: "Sunday" },
+  // Week 4
+  "2026-06-23": { type: "run", name: "Easy Run", distance: 2.2, pace: "8:03-8:51/mile", effort: "Easy", ballHandling: "10 min after", week: 4, day: "Monday" },
+  "2026-06-24": { type: "run", name: "Speed Intervals", distance: 2.5, pace: "5:38/mile for intervals", effort: "Hard", ballHandling: null, week: 4, day: "Tuesday" },
+  "2026-06-25": { type: "run", name: "Easy Run", distance: 1.9, pace: "8:27-8:51/mile", effort: "Easy", ballHandling: null, week: 4, day: "Wednesday" },
+  "2026-06-26": { type: "ball", name: "Ball Handling + Agility", distance: 0.0, pace: null, effort: "Moderate", ballHandling: "Ladder drills, cone weaves, dribble at speed", week: 4, day: "Thursday" },
+  "2026-06-27": { type: "run", name: "Easy Run", distance: 2.2, pace: "8:03-8:27/mile", effort: "Easy", ballHandling: null, week: 4, day: "Friday" },
+  "2026-06-28": { type: "run", name: "Long Run", distance: 3.4, pace: "8:27-8:51/mile", effort: "Easy", ballHandling: "5 min tired dribble after", week: 4, day: "Saturday" },
+  "2026-06-29": { type: "rest", name: "Rest Day", distance: 0.0, pace: null, effort: "Rest", ballHandling: null, week: 4, day: "Sunday" },
+  // Week 5
+  "2026-06-30": { type: "run", name: "Easy Run", distance: 2.5, pace: "8:03-8:51/mile", effort: "Easy", ballHandling: "10 min after", week: 5, day: "Monday" },
+  "2026-07-01": { type: "run", name: "Tempo Run", distance: 3.1, pace: "7:15/mile tempo", effort: "Hard", ballHandling: null, week: 5, day: "Tuesday" },
+  "2026-07-02": { type: "run", name: "Easy Run", distance: 1.9, pace: "8:27-8:51/mile", effort: "Easy", ballHandling: null, week: 5, day: "Wednesday" },
+  "2026-07-03": { type: "ball", name: "Ball Handling", distance: 0.0, pace: null, effort: "Moderate", ballHandling: "Dribbling under pressure", week: 5, day: "Thursday" },
+  "2026-07-04": { type: "run", name: "Easy Run", distance: 2.2, pace: "8:03-8:27/mile", effort: "Easy", ballHandling: null, week: 5, day: "Friday" },
+  "2026-07-05": { type: "run", name: "Long Run", distance: 3.7, pace: "8:27-8:51/mile", effort: "Easy", ballHandling: "5 min tired dribble after", week: 5, day: "Saturday" },
+  "2026-07-06": { type: "rest", name: "Rest Day", distance: 0.0, pace: null, effort: "Rest", ballHandling: null, week: 5, day: "Sunday" },
+  // Week 6
+  "2026-07-07": { type: "run", name: "Easy Run", distance: 2.5, pace: "8:03-8:51/mile", effort: "Easy", ballHandling: "10 min after", week: 6, day: "Monday" },
+  "2026-07-08": { type: "run", name: "Fartlek", distance: 2.5, pace: "Varies", effort: "Hard", ballHandling: null, week: 6, day: "Tuesday" },
+  "2026-07-09": { type: "run", name: "Easy Run", distance: 2.2, pace: "8:27-8:51/mile", effort: "Easy", ballHandling: null, week: 6, day: "Wednesday" },
+  "2026-07-10": { type: "ball", name: "Ball Handling + Sprints", distance: 0.0, pace: null, effort: "Hard", ballHandling: "Dribble -> sprint 50m -> dribble back x8", week: 6, day: "Thursday" },
+  "2026-07-11": { type: "run", name: "Easy Run", distance: 2.2, pace: "8:03-8:27/mile", effort: "Easy", ballHandling: null, week: 6, day: "Friday" },
+  "2026-07-12": { type: "run", name: "Long Run", distance: 4.0, pace: "8:27-8:51/mile", effort: "Easy", ballHandling: "5 min tired dribble after", week: 6, day: "Saturday" },
+  "2026-07-13": { type: "rest", name: "Rest Day", distance: 0.0, pace: null, effort: "Rest", ballHandling: null, week: 6, day: "Sunday" },
+  // Week 7
+  "2026-07-14": { type: "run", name: "Easy Run", distance: 2.5, pace: "8:03-8:51/mile", effort: "Easy", ballHandling: "10 min after", week: 7, day: "Monday" },
+  "2026-07-15": { type: "run", name: "Repeated Sprints", distance: 2.5, pace: "Full sprint", effort: "Max", ballHandling: null, week: 7, day: "Tuesday" },
+  "2026-07-16": { type: "run", name: "Easy Run", distance: 2.5, pace: "8:27-8:51/mile", effort: "Easy", ballHandling: null, week: 7, day: "Wednesday" },
+  "2026-07-17": { type: "ball", name: "Ball Handling", distance: 0.0, pace: null, effort: "Moderate", ballHandling: "30 min: dribbling, passing, receiving on the move", week: 7, day: "Thursday" },
+  "2026-07-18": { type: "run", name: "Tempo Run", distance: 3.7, pace: "6:50-7:15/mile tempo", effort: "Hard", ballHandling: null, week: 7, day: "Friday" },
+  "2026-07-19": { type: "run", name: "Long Run", distance: 4.3, pace: "8:27-8:51/mile", effort: "Easy", ballHandling: "5 min tired dribble after", week: 7, day: "Saturday" },
+  "2026-07-20": { type: "rest", name: "Rest Day", distance: 0.0, pace: null, effort: "Rest", ballHandling: null, week: 7, day: "Sunday" },
+  // Week 8
+  "2026-07-21": { type: "run", name: "Easy Run", distance: 2.5, pace: "8:03-8:51/mile", effort: "Easy", ballHandling: "10 min after", week: 8, day: "Monday" },
+  "2026-07-22": { type: "run", name: "Intervals", distance: 3.7, pace: "6:26/mile for intervals", effort: "Hard", ballHandling: null, week: 8, day: "Tuesday" },
+  "2026-07-23": { type: "run", name: "Easy Run", distance: 2.5, pace: "8:27-8:51/mile", effort: "Easy", ballHandling: null, week: 8, day: "Wednesday" },
+  "2026-07-24": { type: "ball", name: "Ball Handling + Agility", distance: 0.0, pace: null, effort: "Moderate", ballHandling: "T-drill, 5-10-5 shuttle, cone reaction drill", week: 8, day: "Thursday" },
+  "2026-07-25": { type: "run", name: "Easy Run", distance: 2.2, pace: "8:03-8:27/mile", effort: "Easy", ballHandling: null, week: 8, day: "Friday" },
+  "2026-07-26": { type: "run", name: "Long Run", distance: 4.3, pace: "8:27-8:51/mile", effort: "Easy", ballHandling: "5 min tired dribble after", week: 8, day: "Saturday" },
+  "2026-07-27": { type: "rest", name: "Rest Day", distance: 0.0, pace: null, effort: "Rest", ballHandling: null, week: 8, day: "Sunday" },
+  // Week 9
+  "2026-07-28": { type: "run", name: "Easy Run", distance: 2.5, pace: "8:03-8:51/mile", effort: "Easy", ballHandling: "10 min after", week: 9, day: "Monday" },
+  "2026-07-29": { type: "run", name: "RSA + Ball Work", distance: 2.5, pace: "Full sprint", effort: "Max", ballHandling: "10 min dribbling at end", week: 9, day: "Tuesday" },
+  "2026-07-30": { type: "run", name: "Easy Run", distance: 2.5, pace: "8:27-8:51/mile", effort: "Easy", ballHandling: null, week: 9, day: "Wednesday" },
+  "2026-07-31": { type: "run", name: "Game Simulation", distance: 1.9, pace: "Random", effort: "Hard", ballHandling: "20 min ball handling after", week: 9, day: "Thursday" },
+  "2026-08-01": { type: "run", name: "Tempo Run", distance: 3.7, pace: "6:50/mile tempo", effort: "Hard", ballHandling: null, week: 9, day: "Friday" },
+  "2026-08-02": { type: "run", name: "Long Run", distance: 4.7, pace: "8:27-8:51/mile", effort: "Easy", ballHandling: "5 min tired dribble after", week: 9, day: "Saturday" },
+  "2026-08-03": { type: "rest", name: "Rest Day", distance: 0.0, pace: null, effort: "Rest", ballHandling: null, week: 9, day: "Sunday" },
+  // Week 10
+  "2026-08-04": { type: "run", name: "Easy Run", distance: 2.5, pace: "8:03-8:51/mile", effort: "Easy", ballHandling: "10 min after", week: 10, day: "Monday" },
+  "2026-08-05": { type: "run", name: "Intervals", distance: 3.1, pace: "6:02/mile for intervals", effort: "Hard", ballHandling: null, week: 10, day: "Tuesday" },
+  "2026-08-06": { type: "run", name: "Easy Run", distance: 2.5, pace: "8:27-8:51/mile", effort: "Easy", ballHandling: null, week: 10, day: "Wednesday" },
+  "2026-08-07": { type: "ball", name: "Ball Handling + Agility", distance: 0.0, pace: null, effort: "Moderate", ballHandling: "Full session: dribbling, passing, agility ladder, cone drills", week: 10, day: "Thursday" },
+  "2026-08-08": { type: "run", name: "Easy Run", distance: 2.2, pace: "8:03-8:27/mile", effort: "Easy", ballHandling: null, week: 10, day: "Friday" },
+  "2026-08-09": { type: "run", name: "Long Run", distance: 5.0, pace: "8:27-8:51/mile", effort: "Easy", ballHandling: "5 min tired dribble after", week: 10, day: "Saturday" },
+  "2026-08-10": { type: "rest", name: "Rest Day", distance: 0.0, pace: null, effort: "Rest", ballHandling: null, week: 10, day: "Sunday" },
+  // Week 11
+  "2026-08-11": { type: "run", name: "Easy Run", distance: 2.5, pace: "8:03-8:51/mile", effort: "Easy", ballHandling: "10 min after", week: 11, day: "Monday" },
+  "2026-08-12": { type: "run", name: "RSA", distance: 2.5, pace: "Full sprint", effort: "Max", ballHandling: null, week: 11, day: "Tuesday" },
+  "2026-08-13": { type: "run", name: "Easy Run", distance: 2.5, pace: "8:27-8:51/mile", effort: "Easy", ballHandling: null, week: 11, day: "Wednesday" },
+  "2026-08-14": { type: "run", name: "Game Simulation", distance: 2.5, pace: "Random", effort: "Hard", ballHandling: "20 min ball work after", week: 11, day: "Thursday" },
+  "2026-08-15": { type: "run", name: "Easy Run", distance: 1.9, pace: "8:27-8:51/mile", effort: "Easy", ballHandling: null, week: 11, day: "Friday" },
+  "2026-08-16": { type: "run", name: "Long Run", distance: 4.3, pace: "8:27-8:51/mile", effort: "Easy", ballHandling: "5 min tired dribble after", week: 11, day: "Saturday" },
+  "2026-08-17": { type: "rest", name: "Rest Day", distance: 0.0, pace: null, effort: "Rest", ballHandling: null, week: 11, day: "Sunday" },
+  // Week 12
+  "2026-08-18": { type: "run", name: "Easy Run", distance: 2.2, pace: "8:03-8:51/mile", effort: "Easy", ballHandling: "10 min after", week: 12, day: "Monday" },
+  "2026-08-19": { type: "run", name: "Light Intervals", distance: 2.5, pace: "6:02/mile for intervals", effort: "Moderate", ballHandling: null, week: 12, day: "Tuesday" },
+  "2026-08-20": { type: "run", name: "Easy Run", distance: 2.2, pace: "8:27-8:51/mile", effort: "Easy", ballHandling: null, week: 12, day: "Wednesday" },
+  "2026-08-21": { type: "run", name: "Game Simulation (Light)", distance: 1.9, pace: "Random", effort: "Moderate", ballHandling: "15 min ball handling after", week: 12, day: "Thursday" },
+  "2026-08-22": { type: "run", name: "Easy Run or Rest", distance: 1.2, pace: "Easy", effort: "Easy", ballHandling: null, week: 12, day: "Friday" },
+  "2026-08-23": { type: "run", name: "🏆 TRYOUT DAY", distance: 3.1, pace: "Race pace", effort: "Max", ballHandling: "5km time trial - target sub-20:00!", week: 12, day: "Saturday" },
+  "2026-08-24": { type: "rest", name: "Rest Day", distance: 0.0, pace: null, effort: "Rest", ballHandling: "You did it! Recover and celebrate.", week: 12, day: "Sunday" },
 };
 
 function getTodayRun() {
@@ -1271,7 +1271,7 @@ function renderHome() {
 
   if (!run) {
     runTypeLabel.textContent = 'NO RUN SCHEDULED';
-    runDistance.innerHTML = '--<span> km</span>';
+    runDistance.innerHTML = '--<span> mi</span>';
     runDetails.innerHTML = '';
     runBallNote.style.display = 'none';
     runRestMsg.style.display = 'none';
@@ -1291,7 +1291,7 @@ function renderHome() {
     if (run.distance > 0) typeLabel += ' • WEEK ' + run.week;
     else typeLabel += ' • WEEK ' + run.week;
     runTypeLabel.textContent = typeLabel;
-    runDistance.innerHTML = run.distance > 0 ? run.distance + '<span> km</span>' : '🏃<span></span>';
+    runDistance.innerHTML = run.distance > 0 ? run.distance + '<span> mi</span>' : '🏃<span></span>';
     var detailsHtml = '';
     if (run.pace) detailsHtml += '<span>⏱ ' + escapeHtml(run.pace) + '</span>';
     detailsHtml += '<span>🔥 ' + escapeHtml(run.effort) + '</span>';
@@ -1425,7 +1425,7 @@ function selectCalDay(dateStr, dayNum) {
     var runColor = run.type === 'rest' ? 'var(--text3)' : run.type === 'ball' ? 'var(--blue)' : 'var(--accent)';
     html += '<div class="card-sm" style="margin-bottom:8px;border-color:'+runColor+'44">';
     html += '<div style="font-weight:600;font-size:15px;color:'+runColor+'">'+runIcon+' '+run.name+'</div>';
-    if (run.distance > 0) html += '<div style="font-size:12px;color:var(--text2);margin-top:4px">\ud83d\udccd '+run.distance+' km \u00b7 '+run.pace+'</div>';
+    if (run.distance > 0) html += '<div style="font-size:12px;color:var(--text2);margin-top:4px">\ud83d\udccd '+run.distance+' mi \u00b7 '+run.pace+'</div>';
     if (run.effort) html += '<div style="font-size:12px;color:var(--text2);margin-top:2px">\ud83d\udd25 Effort: '+run.effort+'</div>';
     if (run.details) html += '<div style="font-size:12px;color:var(--text2);margin-top:2px">\ud83d\udccb '+run.details+'</div>';
     if (run.ballHandling) html += '<div style="font-size:12px;color:var(--text2);margin-top:2px">\u26bd '+run.ballHandling+'</div>';
@@ -1656,7 +1656,7 @@ document.getElementById('btn-log-run').addEventListener('click', function() {
   var today = new Date().toISOString();
   STATE.completedWorkouts.push({
     workoutId: 'run-' + run.type + '-' + today.split('T')[0],
-    name: run.name + ' (' + (run.distance > 0 ? run.distance + 'km' : 'ball work') + ')',
+    name: run.name + ' (' + (run.distance > 0 ? run.distance + 'mi' : 'ball work') + ')',
     date: today,
     minutes: Math.round(run.distance * 6),
     xp: Math.round(run.distance * 20 + 30),
